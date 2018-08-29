@@ -1,6 +1,11 @@
 [package]
 name = "editor"
 version = "0.1.0"
-authors = ["fs_suzuki <masaya.suzuki@isp21.co.jp>"]
+authors = ["doberan <doberankei@gmail.com>"]
+
+# [dependencies.conrod]
+# version = "0.53.0"
+# features = ["gliun", "winit"]
 
 [dependencies]
+find_folder = "*"
