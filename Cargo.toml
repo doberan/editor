@@ -9,3 +9,4 @@ authors = ["doberan <doberankei@gmail.com>"]
 
 [dependencies]
 find_folder = "*"
+rand="0.3.0"
