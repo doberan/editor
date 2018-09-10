@@ -2,24 +2,29 @@ extern crate rand;
 use std::io;
 use std::cmp::Ordering;
 use rand::Rng;
-
 fn main() {
+    // print title
     println!("Guess the number!");
     let secret_number = rand::thread_rng()
         .gen_range(1,101);
     println!("The secret number is : {}",
         secret_number);
 
+  loop{
     println!("Please input your guess.");
     let mut guess = String::new();
     io::stdin().read_line(&mut guess)
-        .expect("Failed to read line");
+      .expect("Failed to read line");
+    // cast String => u32
     let guess: u32 = guess.trim().parse()
-        .expect("not changed type!");
+      .expect("can not changes guess...");
     println!("You Guessed: {}", guess );
+
+    // compare guess for secret_number
     match guess.cmp(&secret_number){
-        Ordering::Less      =>  println!("Too small!"),
-        Ordering::Greater   =>  println!("Too big!"),
-        Ordering::Equal     =>  println!("You win!"),
+      Ordering::Less    => println!("Too small"),
+      Ordering::Greater => println!("Too big"),
+      Ordering::Equal   => println!("You win"),
     }
+  }
 }
